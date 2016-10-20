@@ -69,6 +69,8 @@ public:
 	// Set the fake today value.  This will be used instead of the real today.
 	static void setFakeTodayValue(int a_val) { m_FakeTodayValue = a_val; }
 
+	int GetRealToday();
+
 	// Record today's local date in this object - allows faked today's date.
 	void SetToday();
 

@@ -5,9 +5,9 @@
 #include <sstream>
 #include <ctime>
 
-static int m_FakeTodayValue = 0;
-static int dayPreMonth[] = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
-static int daysInMonth[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+int RCDate::m_FakeTodayValue = 0;
+int RCDate::dayPreMonth[] = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
+int RCDate::daysInMonth[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 void RCDate::Set(int a_year, int a_month, int a_day)
 {
@@ -24,17 +24,30 @@ void RCDate::Set(const RCDate &a_date)
 	m_date = a_date.m_date;
 }
 
-void RCDate::SetActualToday()
+int RCDate::GetRealToday()
 {
 	time_t t = time(0);
-	struct tm * now = localtime(&t);
-	int year, month, day;
+	struct tm *now = localtime(&t);
+	int year, month, day, date;
 
 	year = now->tm_year + 1900;
 	month = now->tm_mon + 1;
 	day = now->tm_mday;
+	date = year * 10000 + month * 100 + day;
+	return date;
+}
 
-	m_date = year * 10000 + month * 100 + day;
+void RCDate::SetToday()
+{
+	if (m_FakeTodayValue != 0)
+		m_date = m_FakeTodayValue;
+	else
+		m_date = GetRealToday();
+}
+
+void RCDate::SetActualToday()
+{
+	m_date = GetRealToday();
 }
 
 
@@ -67,4 +80,39 @@ RCDate& RCDate::operator= (int a_date)
 	RCDate temp;
 	temp.m_date = a_date;
 	return temp;
+}
+
+// Finds difference between two dates
+int RCDate::operator -(const RCDate &a_date)
+{
+	return 0;
+}
+
+// Subtracts specified number of days from date
+int RCDate::operator -(int a_days)
+{
+	return 0;
+}
+
+// Adds days to date
+int RCDate::operator+(int a_days)
+{
+	return 0;
+}
+
+// Comparison Operators
+bool RCDate::operator ==(const RCDate &a_date) const
+{
+	if (this->m_date == a_date.m_date)
+		return true;
+	else
+		return false;
+}
+
+bool RCDate::operator ==(int a_date) const
+{
+	if (this->m_date == a_date)
+		return true;
+	else
+		return false;
 }
