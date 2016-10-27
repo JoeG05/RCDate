@@ -122,14 +122,18 @@ bool RCDate::operator ==(int a_date) const
 
 bool RCDate::operator !=(const RCDate &a_date) const
 {
-	// TODO RCDate !=
-	return false;
+	if (this->m_date == a_date.m_date)
+		return false;
+	else
+		return true;
 }
 
 bool RCDate::operator !=(int a_date) const
 {
-	// TODO int !=
-	return false;
+	if (this->m_date == a_date)
+		return false;
+	else
+		return true;
 }
 
 bool RCDate::operator <(const RCDate &a_date) const
