@@ -85,18 +85,21 @@ RCDate& RCDate::operator= (int a_date)
 // Finds difference between two dates
 int RCDate::operator -(const RCDate &a_date)
 {
+	// TODO: difference between dates
 	return 0;
 }
 
 // Subtracts specified number of days from date
 int RCDate::operator -(int a_days)
 {
+	// TODO: subtract specified days
 	return 0;
 }
 
 // Adds days to date
 int RCDate::operator+(int a_days)
 {
+	// TODO: add days to date
 	return 0;
 }
 
@@ -115,4 +118,78 @@ bool RCDate::operator ==(int a_date) const
 		return true;
 	else
 		return false;
+}
+
+bool RCDate::operator !=(const RCDate &a_date) const
+{
+	// TODO RCDate !=
+	return false;
+}
+
+bool RCDate::operator !=(int a_date) const
+{
+	// TODO int !=
+	return false;
+}
+
+bool RCDate::operator <(const RCDate &a_date) const
+{
+	// TODO RCDate <
+	return false;
+}
+
+bool RCDate::operator <(int a_date)const
+{
+	// TODO int <
+	return false;
+}
+
+bool RCDate::operator <= (const RCDate & a_date)
+{
+	// TODO RCDate <=
+	return false;
+}
+
+bool RCDate::operator <= (int a_date) const
+{
+	// TODO int <=
+	return false;
+}
+
+bool RCDate::operator > (const RCDate & a_date)
+{
+	// TODO RCDate > 
+	return false;
+}
+
+bool RCDate::operator > (int a_date) const
+{
+	// TODO int >
+	return false;
+}
+
+bool RCDate::operator >= (const RCDate &a_date)
+{
+	// TODO RCDate >=
+	return false;
+}
+
+bool RCDate::operator >=(int a_date) const
+{
+	// TODO int >=
+	return false;
+}
+
+RCDate& RCDate::operator--()
+{
+	// TODO prefix --
+	RCDate tmp = *this;
+	return tmp;
+}
+
+RCDate& RCDate::operator++()
+{
+	// TODO prefix ++
+	RCDate tmp = *this;
+	return tmp;
 }
