@@ -82,6 +82,10 @@ public:
 	int GetMonth() const { return m_date / 100 % 100; }
 	int GetDay() const { return m_date % 100; }
 
+	/*int GetYear(RCDate &a_date) { return a_date.m_date / 10000; }
+	int GetMonth(RCDate &a_date) { return a_date.m_date / 100 % 100; }
+	int GetDay(RCDate &a_date) { return a_date.m_date % 100; }*/
+
 	// Gets the date as one value or as its component values.
 	int Get() { return m_date; }
 	void Get(int &a_year, int &a_month, int &a_day) const {
@@ -90,6 +94,14 @@ public:
 		a_month = GetMonth();
 		a_day = GetDay();
 	}
+
+	///*void Get(int &a_year, int &a_month, int &a_day, RCDate &a_date) 
+	//{
+	//	a_year = GetYear(a_date);
+	//	a_month = GetMonth(a_date);
+	//	a_day = GetDay(a_date);*/
+
+	//}
 	// Return date as an ASCII string in the form "MM/DD/YYYY".
 	string GetASCIIDate();
 
