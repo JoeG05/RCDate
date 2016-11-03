@@ -138,21 +138,18 @@ bool RCDate::operator !=(int a_date) const
 
 bool RCDate::operator <(const RCDate &a_date) const
 {
-	// TODO RCDate <
-	int thisYear, year, thisMonth, month, thisDay, day;
-	Get(thisYear, thisMonth, thisDay);
-	year = a_date.m_date / 10000;
-	month = a_date.m_date / 100 % 100;
-	day = a_date.m_date % 100;
-
-	if (thisYear < year)
+	if (m_date < a_date.m_date)
 		return true;
+	else
+		return false;
 }
 
 bool RCDate::operator <(int a_date)const
 {
-	// TODO int <
-	return false;
+	if (m_date < a_date)
+		return true;
+	else
+		return false;
 }
 
 bool RCDate::operator <= (const RCDate & a_date)

@@ -10,21 +10,13 @@ int main()
 {
 	//	Test GetASCIIDate
 	RCDate d1(20161015);
-	string test = d1.GetASCIIDate();
-	int d3 = 20161026;
-	cout << test << endl;
-
-	// Test SetActualToday
-	RCDate d2(0);
+	RCDate d2;
 	d2.SetActualToday();
-	test = d2.GetASCIIDate();
-	cout << test << endl;
-	
-	if (d2 != d1)
-		cout << "Not equal" << endl;
+	int d3 = 20161102;
 
-	if (d2 != d3)
-		cout << "Not equal" << endl;
+	if (d1 < d3)
+		cout << "true" << endl;
+	
 	system("Pause");
 	return 0;
 }
