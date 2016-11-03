@@ -23,10 +23,10 @@ Adds days to date
 Comparison Operators
 - [X] == (RCDate)		10-20
 - [X] == (int a_date)	10-20
-- [ ] != (RCDate)
-- [ ] != (int a_date)
-- [ ] < (RCDate)
-- [ ] < (int a_date)
+- [X] != (RCDate)
+- [X] != (int a_date)
+- [X] < (RCDate)
+- [X] < (int a_date)
 - [ ] <= (RCDate)
 - [ ] <= (int a_date)
 - [ ] > (RCDate)
