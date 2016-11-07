@@ -187,14 +187,18 @@ bool RCDate::operator > (int a_date)
 
 bool RCDate::operator >= (const RCDate &a_date)
 {
-	// TODO RCDate >=
-	return false;
+	if (this->m_date >= a_date.m_date)
+		return true;
+	else
+		return false;
 }
 
-bool RCDate::operator >=(int a_date) const
+bool RCDate::operator >=(int a_date)
 {
-	// TODO int >=
-	return false;
+	if (this->m_date >= a_date)
+		return true;
+	else
+		return false;
 }
 
 RCDate& RCDate::operator--()

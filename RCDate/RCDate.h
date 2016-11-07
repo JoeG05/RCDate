@@ -137,7 +137,7 @@ public:
 	bool operator >(int a_date);
 
 	bool operator >=(const RCDate& a_date);
-	bool operator >=(int a_date) const;
+	bool operator >=(int a_date);
 
 	// Unary minus operators.
 	RCDate& operator --(); // This is the prefix operator.
