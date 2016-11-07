@@ -14,8 +14,10 @@ int main()
 	d2.SetActualToday();
 	int d3 = 20161107;
 
-	if (d2 <= d3)
+	if (d2 > d3)
 		cout << "true" << endl;
+	else
+		cout << "false" << endl;
 	
 	system("Pause");
 	return 0;

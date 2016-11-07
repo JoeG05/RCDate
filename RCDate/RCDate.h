@@ -134,7 +134,7 @@ public:
 	bool operator <=(int a_date);
 
 	bool operator >(const RCDate& a_date);
-	bool operator >(int a_date) const;
+	bool operator >(int a_date);
 
 	bool operator >=(const RCDate& a_date);
 	bool operator >=(int a_date) const;
