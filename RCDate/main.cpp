@@ -12,9 +12,9 @@ int main()
 	RCDate d1(20161015);
 	RCDate d2;
 	d2.SetActualToday();
-	int d3 = 20161102;
+	int d3 = 20161107;
 
-	if (d1 < d3)
+	if (d2 <= d3)
 		cout << "true" << endl;
 	
 	system("Pause");
