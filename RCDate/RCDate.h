@@ -116,10 +116,10 @@ public:
 	int operator -(const RCDate &a_date);
 
 	// Subtracts a specified number of days to the date.  
-	int operator -(int a_days);
+	RCDate operator -(int a_days);
 
 	// Adds a specified number of days to the date.  
-	int operator +(int a_days);
+	RCDate operator +(int a_days);
 
 	// Compares two dates. 
 	bool operator ==(const RCDate &a_date) const;

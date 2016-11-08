@@ -90,17 +90,44 @@ int RCDate::operator -(const RCDate &a_date)
 }
 
 // Subtracts specified number of days from date
-int RCDate::operator -(int a_days)
+RCDate RCDate::operator -(int a_days)
 {
 	// TODO: subtract specified days
 	return 0;
 }
 
 // Adds days to date
-int RCDate::operator+(int a_days)
+RCDate RCDate::operator+(int a_days)
 {
 	// TODO: add days to date
-	return 0;
+	
+	int month, day, year, date;
+	month = GetMonth();
+	day = GetDay();
+	year = GetYear();
+
+	day += a_days;
+	
+	while (day > daysInMonth[month])
+	{
+		if (day > daysInMonth[month])
+		{
+			day = day - daysInMonth[month];
+			if (month == 12)
+			{
+				month = 1;
+				year++;
+			}
+			else
+				month++;
+			cout << month << "/" << day << endl;
+
+		}
+		
+	}
+	date = year * 10000 + month * 100 + day;
+	this->m_date = date;
+	return *this;
 }
 
 // Comparison Operators

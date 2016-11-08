@@ -8,17 +8,13 @@ using namespace std;
 
 int main()
 {
-	//	Test GetASCIIDate
-	RCDate d1(20161015);
-	RCDate d2;
-	d2.SetActualToday();
-	int d3 = 20161107;
-
-	if (d2 > d3)
-		cout << "true" << endl;
-	else
-		cout << "false" << endl;
 	
+	RCDate d1(20161015);
+
+	RCDate d2 = d1 + 100;
+	cout << d2.GetASCIIDate() << endl;
+	cout << d1.GetDayOfWeek() << endl;
+	cout << d2.GetDayOfWeek() << endl;
 	system("Pause");
 	return 0;
 }
