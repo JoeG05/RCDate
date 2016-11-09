@@ -102,6 +102,7 @@ RCDate RCDate::operator+(int a_days)
 	// TODO: add days to date
 	
 	int month, day, year, date;
+	RCDate temp;
 	month = GetMonth();
 	day = GetDay();
 	year = GetYear();
@@ -120,14 +121,14 @@ RCDate RCDate::operator+(int a_days)
 			}
 			else
 				month++;
-			cout << month << "/" << day << endl;
+			
 
 		}
 		
 	}
 	date = year * 10000 + month * 100 + day;
-	this->m_date = date;
-	return *this;
+	temp.m_date = date;
+	return temp;
 }
 
 // Comparison Operators
