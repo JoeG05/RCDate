@@ -71,9 +71,8 @@ string RCDate::GetASCIIDate()
 // Assignment Operator
 RCDate& RCDate::operator= (const RCDate &a_date)
 {
-	RCDate temp;
-	temp.m_date = a_date.m_date;
-	return temp;
+	this->m_date = a_date.m_date;
+	return *this;
 }
 
 RCDate& RCDate::operator= (int a_date)
@@ -96,7 +95,34 @@ int RCDate::operator -(const RCDate &a_date)
 RCDate RCDate::operator -(int a_days)
 {
 	// TODO: subtract specified days
-	return 0;
+	int month, day, year, date;
+	RCDate temp;
+	month = GetMonth();
+	day = GetDay();
+	year = GetYear();
+
+	if (this->isLeapYear())
+	{
+		while (a_days >= daysInLeapMonth[month])
+		{
+			
+			if (month == 1)
+			{
+				month = 12;
+				year--;
+			}
+			else
+				month--;
+		}
+		
+	}
+
+	else
+	{
+	}
+	date = year * 10000 + month * 100 + day;
+	temp.m_date = date;
+	return temp;
 }
 
 // Adds days to date
@@ -150,8 +176,11 @@ RCDate RCDate::operator+(int a_days)
 
 	
 	date = year * 10000 + month * 100 + day;
-	temp.m_date = date;
-	return temp;
+	this->m_date = date;
+	return *this;
+
+	/*temp.m_date = date;
+	return temp;*/
 }
 
 // Comparison Operators
@@ -261,8 +290,8 @@ RCDate& RCDate::operator--()
 
 RCDate& RCDate::operator++()
 {
-	// TODO prefix ++
+	
 	RCDate temp;
-	temp = *this + 1;
+	temp.m_date = *this + 1;
 	return temp;
 }

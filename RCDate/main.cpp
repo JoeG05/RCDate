@@ -9,11 +9,14 @@ using namespace std;
 int main()
 {
 	
-	RCDate d1(20150228);
-	RCDate d2(20150328);
-
-	cout << d1 - d2 << endl;
+	RCDate d1(20160301);
+	RCDate d2;
+	d1++;
 	
-	system("Pause");
+	cout << d1.GetASCIIDate() << endl;
+
+	
+	
+ 	system("Pause");
 	return 0;
 }
