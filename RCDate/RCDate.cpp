@@ -86,8 +86,10 @@ RCDate& RCDate::operator= (int a_date)
 // Finds difference between two dates
 int RCDate::operator -(const RCDate &a_date)
 {
-	// TODO: difference between dates
-	return 0;
+	int tmp;
+	tmp = CalendarDiffDates(*this, a_date);
+	return tmp;
+	
 }
 
 // Subtracts specified number of days from date
@@ -99,9 +101,7 @@ RCDate RCDate::operator -(int a_days)
 
 // Adds days to date
 RCDate RCDate::operator+(int a_days)
-{
-	// TODO: add days to date
-	
+{	
 	int month, day, year, date;
 	RCDate temp;
 	month = GetMonth();
@@ -262,6 +262,7 @@ RCDate& RCDate::operator--()
 RCDate& RCDate::operator++()
 {
 	// TODO prefix ++
-	RCDate tmp = *this;
-	return tmp;
+	RCDate temp;
+	temp = *this + 1;
+	return temp;
 }

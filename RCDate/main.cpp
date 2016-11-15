@@ -9,10 +9,10 @@ using namespace std;
 int main()
 {
 	
-	RCDate d1(20160228);
+	RCDate d1(20150228);
+	RCDate d2(20150328);
 
-	RCDate d2 = d1 + 1;
-	cout << d2.GetASCIIDate() << endl;
+	cout << d1 - d2 << endl;
 	
 	system("Pause");
 	return 0;
