@@ -113,16 +113,20 @@ RCDate RCDate::operator+(int a_days)
 	{
 		if (day > daysInMonth[month])
 		{
-			day = day - daysInMonth[month];
+			if (this->isLeapYear() && month == 2)
+				day = day - 29;
+
+			else
+				day = day - daysInMonth[month];
+
 			if (month == 12)
 			{
 				month = 1;
 				year++;
 			}
+
 			else
 				month++;
-			
-
 		}
 		
 	}

@@ -9,11 +9,10 @@ using namespace std;
 int main()
 {
 	
-	RCDate d1(20161015);
+	RCDate d1(20160228);
 
-	RCDate d2 = d1 + 100;
-	cout << d1.GetDayOfWeek() << endl;
-	cout << d2.GetDayOfWeek() << endl;
+	RCDate d2 = d1 + 1;
+	cout << d2.GetASCIIDate() << endl;
 	
 	system("Pause");
 	return 0;
