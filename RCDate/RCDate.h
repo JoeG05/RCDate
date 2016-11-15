@@ -197,6 +197,9 @@ private:
 
 	// The number of days in a month (non-leap year).
 	static int daysInMonth[13];
+	
+	// The number of days in a month (leap year).
+	static int daysInLeapMonth[13];
 
 	// Get the offset from the year 0.
 	int dateOffset(const RCDate &a_date)

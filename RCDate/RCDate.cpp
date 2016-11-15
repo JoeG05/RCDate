@@ -8,6 +8,7 @@
 int RCDate::m_FakeTodayValue = 0;
 int RCDate::dayPreMonth[] = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
 int RCDate::daysInMonth[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+int RCDate::daysInLeapMonth[] = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 void RCDate::Set(int a_year, int a_month, int a_day)
 {
@@ -109,27 +110,45 @@ RCDate RCDate::operator+(int a_days)
 
 	day += a_days;
 	
-	while (day > daysInMonth[month])
+	if (this->isLeapYear())
 	{
-		if (day > daysInMonth[month])
+		while (day > daysInLeapMonth[month])
 		{
-			if (this->isLeapYear() && month == 2)
-				day = day - 29;
-
-			else
-				day = day - daysInMonth[month];
-
-			if (month == 12)
+			if (day > daysInLeapMonth[month])
 			{
-				month = 1;
-				year++;
-			}
+				day = day - daysInLeapMonth[month];
 
-			else
-				month++;
+				if (month == 12)
+				{
+					month = 1;
+					year++;
+				}
+				else
+					month++;
+			}
+			
 		}
-		
 	}
+
+	else
+	{
+		while (day > daysInMonth[month])
+		{
+			if (day > daysInMonth[month])
+			{
+				day = day - daysInMonth[month];
+				if (month == 12)
+				{
+					month = 1;
+					year++;
+				}
+				else
+					month++;
+			}
+		}
+	}
+
+	
 	date = year * 10000 + month * 100 + day;
 	temp.m_date = date;
 	return temp;

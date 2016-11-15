@@ -1,16 +1,17 @@
-﻿Build started 11/14/2016 9:27:59 PM.
+﻿Build started 11/15/2016 3:02:56 PM.
      1>Project "C:\Users\joegu\Documents\GitHub\RCDate\RCDate\RCDate.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt RCDate.cpp main.cpp
-         main.cpp
          RCDate.cpp
-     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(30): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(31): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
          c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\time.h(505): note: see declaration of 'localtime'
          Generating Code...
-     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(75): warning C4172: returning address of local variable or temporary: temp
-     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(82): warning C4172: returning address of local variable or temporary: temp
-     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(240): warning C4172: returning address of local variable or temporary: tmp
-     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(247): warning C4172: returning address of local variable or temporary: tmp
+     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(76): warning C4172: returning address of local variable or temporary: temp
+     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(83): warning C4172: returning address of local variable or temporary: temp
+     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(259): warning C4172: returning address of local variable or temporary: tmp
+     1>c:\users\joegu\documents\github\rcdate\rcdate\rcdate.cpp(266): warning C4172: returning address of local variable or temporary: tmp
+         Skipping... (no relevant changes detected)
+         main.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\joegu\Documents\GitHub\RCDate\RCDate\Debug\RCDate.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\joegu\Documents\GitHub\RCDate\RCDate\Debug\RCDate.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\joegu\Documents\GitHub\RCDate\RCDate\Debug\RCDate.lib" /MACHINE:X86 Debug\main.obj
          Debug\RCDate.obj
@@ -19,4 +20,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.77
+Time Elapsed 00:00:01.64
