@@ -95,31 +95,44 @@ int RCDate::operator -(const RCDate &a_date)
 RCDate RCDate::operator -(int a_days)
 {
 	// TODO: subtract specified days
-	int month, day, year, date;
-	RCDate temp;
+	int month, day, year, date, julDate;
+	RCDate temp = *this;
+	
 	month = GetMonth();
 	day = GetDay();
 	year = GetYear();
+	julDate = this->getJulianDay();
+	julDate -= a_days;
 
-	if (this->isLeapYear())
+	while (julDate <= 0)
 	{
-		while (a_days >= daysInLeapMonth[month])
-		{
-			
-			if (month == 1)
-			{
-				month = 12;
-				year--;
-			}
-			else
-				month--;
-		}
-		
+		year--;
+		if (year % 4 == 0)
+			julDate += 366;
+		else
+			julDate += 365;
 	}
 
+	int counter = month;
+	
+	if (year % 4 == 0)
+	{
+		while (julDate >= daysInLeapMonth[counter])
+		{
+			julDate -= daysInLeapMonth[counter];
+			month--;
+		}
+	}
 	else
 	{
+		while (julDate >= daysInMonth[counter])
+		{
+			julDate -= daysInMonth[counter];
+			month--;
+		}
 	}
+	day = julDate;
+	
 	date = year * 10000 + month * 100 + day;
 	temp.m_date = date;
 	return temp;
@@ -176,11 +189,8 @@ RCDate RCDate::operator+(int a_days)
 
 	
 	date = year * 10000 + month * 100 + day;
-	this->m_date = date;
-	return *this;
-
-	/*temp.m_date = date;
-	return temp;*/
+	temp.m_date = date;
+	return temp;
 }
 
 // Comparison Operators
