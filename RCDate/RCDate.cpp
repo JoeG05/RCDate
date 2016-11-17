@@ -306,7 +306,8 @@ bool RCDate::operator >=(int a_date)
 
 RCDate& RCDate::operator--()
 {
-	// TODO prefix --
+	
+
 	RCDate tmp = *this;
 	tmp = *this - 1;
 	this->m_date = tmp.m_date;
