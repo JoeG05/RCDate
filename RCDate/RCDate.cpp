@@ -5,7 +5,7 @@
 #include <sstream>
 #include <ctime>
 
-int RCDate::m_FakeTodayValue = 0;
+int RCDate::m_FakeTodayValue = 20141116;
 int RCDate::dayPreMonth[] = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
 int RCDate::dayPreLeapMonth[] = { 0, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 };
 int RCDate::daysInMonth[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -78,9 +78,8 @@ RCDate& RCDate::operator= (const RCDate &a_date)
 
 RCDate& RCDate::operator= (int a_date)
 {
-	RCDate temp;
-	temp.m_date = a_date;
-	return temp;
+	this->m_date = a_date;
+	return *this;
 }
 
 // Finds difference between two dates
