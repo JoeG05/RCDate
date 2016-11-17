@@ -195,6 +195,9 @@ private:
 	// The number of days since the beginning of the year to a given month (non-leap year).
 	static int dayPreMonth[13];
 
+	// The number of days since the beginning of the year to a given month (leap year).
+	static int dayPreLeapMonth[13];
+
 	// The number of days in a month (non-leap year).
 	static int daysInMonth[13];
 	

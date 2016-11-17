@@ -7,6 +7,7 @@
 
 int RCDate::m_FakeTodayValue = 0;
 int RCDate::dayPreMonth[] = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 };
+int RCDate::dayPreLeapMonth[] = { 0, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335 };
 int RCDate::daysInMonth[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 int RCDate::daysInLeapMonth[] = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -94,7 +95,7 @@ int RCDate::operator -(const RCDate &a_date)
 // Subtracts specified number of days from date
 RCDate RCDate::operator -(int a_days)
 {
-	// TODO: subtract specified days
+	
 	int month, day, year, date, julDate;
 	RCDate temp = *this;
 	
@@ -104,34 +105,47 @@ RCDate RCDate::operator -(int a_days)
 	julDate = this->getJulianDay();
 	julDate -= a_days;
 
-	while (julDate <= 0)
+	while (a_days > 0)
 	{
-		year--;
-		if (year % 4 == 0)
-			julDate += 366;
+		if (day > a_days)
+		{
+			day = day - a_days;
+			a_days = 0;
+		}
 		else
-			julDate += 365;
-	}
-
-	int counter = month;
-	
-	if (year % 4 == 0)
-	{
-		while (julDate >= daysInLeapMonth[counter])
 		{
-			julDate -= daysInLeapMonth[counter];
-			month--;
+			if (year % 4 == 0)
+			{
+				a_days -= day;
+				if (month == 1)
+				{
+					month = 12;
+					year--;
+					day = daysInLeapMonth[month];
+				}
+				else
+				{
+					month--;
+					day = daysInLeapMonth[month];
+				}
+			}
+			else
+			{
+				a_days -= day;
+				if (month == 1)
+				{
+					month = 12;
+					year--;
+					day = daysInMonth[month];
+				}
+				else
+				{
+					month--;
+					day = daysInMonth[month];
+				}
+			}
 		}
 	}
-	else
-	{
-		while (julDate >= daysInMonth[counter])
-		{
-			julDate -= daysInMonth[counter];
-			month--;
-		}
-	}
-	day = julDate;
 	
 	date = year * 10000 + month * 100 + day;
 	temp.m_date = date;
@@ -295,7 +309,9 @@ RCDate& RCDate::operator--()
 {
 	// TODO prefix --
 	RCDate tmp = *this;
-	return tmp;
+	tmp = *this - 1;
+	this->m_date = tmp.m_date;
+	return *this;
 }
 
 RCDate& RCDate::operator++()
@@ -303,5 +319,6 @@ RCDate& RCDate::operator++()
 	
 	RCDate temp;
 	temp.m_date = *this + 1;
-	return temp;
+	this->m_date = temp.m_date;
+	return *this;
 }

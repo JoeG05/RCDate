@@ -11,11 +11,11 @@ int main()
 	
 	RCDate d1(20160328);
 	RCDate d2;
-	d2 = d1 - 30;
 	
+	
+	
+	d2 = d1 - 1;
 	cout << d2.GetASCIIDate() << endl;
-	cout << d1.GetASCIIDate() << endl;
-
 	
 	
  	system("Pause");
