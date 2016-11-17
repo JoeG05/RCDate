@@ -12,13 +12,13 @@ Assignment Operators
 - [X] = (int a_date)
 
 Difference between dates
-- [ ] -(RCDate)
+- [X] -(RCDate)
 
 Subtract days from date
-- [ ] -(int a_days)
+- [X] -(int a_days)
 
 Adds days to date
-- [ ] +(int a_days)
+- [X] +(int a_days)
 
 Comparison Operators
 - [X] == (RCDate)		10-20
@@ -27,15 +27,15 @@ Comparison Operators
 - [X] != (int a_date)
 - [X] < (RCDate)
 - [X] < (int a_date)
-- [ ] <= (RCDate)
-- [ ] <= (int a_date)
-- [ ] > (RCDate)
-- [ ] > (int a_date)
-- [ ] >= (RCDate)
-- [ ] >= (int a_date)
+- [X] <= (RCDate)
+- [X] <= (int a_date)
+- [X] > (RCDate)
+- [X] > (int a_date)
+- [X] >= (RCDate)
+- [X] >= (int a_date)
 
 Unary Operators
-- [ ] --()
-- [ ] --(int)
-- [ ] ++()
-- [ ] ++(int)
+- [X] --()
+- [X] --(int)
+- [X] ++()
+- [X] ++(int)
